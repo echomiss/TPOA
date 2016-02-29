@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>修改学生信息</title>
+<import type='css' file='Images.css1.css' />
+<style>
+td, th {
+	text-align: center
+}
+</style>
+</head>
+<body>
+<form method='post' action='__URL__/editOk' enctype='multipart/form-data'>
+	<input type='hidden' name='id' value="{$data.id}" />
+  <table class="table" cellspacing="1" cellpadding="2" width="99%"
+			align="center" border="0">
+    <tbody>
+      <tr>
+        <th style="text-align:left;" colspan="2" class="bg_tr" align="left" height="25">学生信息修改管理</th>
+      </tr>
+      <tr>
+        <td style="text-align:right;" class="td_bg" width="17%" height="23" align="center">用户名：</td>
+        <td style="text-align:left;" class="td_bg">
+        	<input type='text' name='username' value="{$data.username}" />
+        </td>
+      </tr>
+	  <tr>
+        <td style="text-align:right;" class="td_bg" width="17%" height="23" align="center">密码：</td>
+        <td style="text-align:left;" class="td_bg">
+        	<input type='password' name='password' readonly="readonly" value="{$data.password}" />
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align:right;" class="td_bg" width="17%" height="23" align="center">班级：</td>
+        <td style="text-align:left;" class="td_bg">
+        	<select name="classname" style="width:150px">
+        		<volist name='list' id='v'>
+        		<option value="{$v.id}" <if condition="$v.id eq $data.classname ">selected="selected"</if>>{$v.classname}</option>
+        		</volist>
+        	</select>
+        </td>
+      </tr>
+	  <tr>
+        <td style="text-align:right;" class="td_bg" width="17%" height="23" align="center">真实姓名：</td>
+        <td style="text-align:left;" class="td_bg">
+        	<input type='text' name='name' value="{$data.name}" />
+        </td>
+      </tr>
+	  <tr>
+        <td style="text-align:right;" class="td_bg" width="17%" height="23" align="center">性别：</td>
+        <td style="text-align:left;" class="td_bg">
+        	<input type='radio' name='sex' value='男' <if condition="$data.sex eq '男'"> checked='checked' </if> />男
+			<input type='radio' name='sex' value='女' <if condition="$data.sex eq '女'"> checked='checked' </if> />女
+        </td>
+      </tr>
+	  <tr>
+        <td style="text-align:right;" class="td_bg" width="17%" height="23" align="center">年龄：</td>
+        <td style="text-align:left;" class="td_bg">
+        	<input type='text' name='age' value="{$data.age}" />
+        </td>
+      </tr>
+	  <tr>
+        <td style="text-align:right;" class="td_bg" width="17%" height="23" align="center">联系电话：</td>
+        <td style="text-align:left;" class="td_bg">
+        	<input type='text' name='tel' value="{$data.tel}" />
+        </td>
+      </tr>
+	  <tr>
+        <td style="text-align:right;" class="td_bg" width="17%" height="23" align="center">家庭住址：</td>
+        <td style="text-align:left;" class="td_bg">
+        	<input type='text' name='address' value="{$data.address}" />
+        </td>
+      </tr>
+	  <tr>
+        <td style="text-align:right;" class="td_bg" width="17%" height="23" align="center">备注信息：</td>
+        <td style="text-align:left;" class="td_bg">
+        	<textarea cols='40' rows='5' name='remark'>{$data.remark}</textarea>
+        </td>
+      </tr>
+	  <tr>
+        <td style="text-align:right;" class="td_bg" width="17%" height="23" align="center">&nbsp;</td>
+        <td style="text-align:left;" class="td_bg">
+        	<input type='submit' name='submit' value='修改' />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</body>
+</html>

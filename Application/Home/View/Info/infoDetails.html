@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Language" content="zh-CN" />
+	<title>详细信息</title>
+	<link rel="stylesheet" rev="stylesheet" href="Public/css/default.css" type="text/css" media="all"/>
+	<script src="Public/script/common.js" type="text/javascript"></script>
+</head>
+<body class="multi index">
+	<div id="divMain" style="margin-left:200px">
+		<div class="post multi">
+			<h4 class="post-date"><?php echo date('Y年m月d日',$this->data['articles']['a_publish_time']);?></h4>
+			<h2 class="post-title"><?php echo $this->data['articles']['a_name'];?></h2>
+			<div class="post-body">
+				<?php echo htmlspecialchars_decode($this->data['articles']['a_content']);?>
+			</div>
+			<h5 class="post-tags"></h5>
+			<h6 class="post-footer" style="border-bottom: 1px solid #dbe0e6;">
+			作者:<?php echo $this->data['articles']['a_author'];?> | 分类:<?php echo $this->data['articles']['c_name'];?> | 点击:0 | 评论:0	
+			</h6>
+		</div>
+			<a href="">返回</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="">修改
+			</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+			<a onclick="return window.confirm('');" href="">删除</a>
+	</div>
+</body>
+</html>

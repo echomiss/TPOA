@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>学习情况表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="__PUBLIC__/scripts/jquery.js" tppabs="js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/scripts/page_common.js" tppabs="js/page_common.js"></script>
+<link href="__PUBLIC__/css/common_style_blue.css" tppabs="__PUBLIC__/css/common_style_blue.css" rel="stylesheet" type="text/css" />
+<import type='css' file='images.css1.css' />
+<style type="text/css">
+td, th {
+	text-align: center
+}
+</style>
+</head>
+<body>
+
+<!-- 页面标题 -->
+<table class="table" cellspacing="1" cellpadding="2" width="99%" align="center" border="0">
+<tbody>
+	<tr>
+        <th style="text-align:left;" colspan="7" class="bg_tr" align="left" height="25">调查列表</th>
+    </tr>
+	<tr>
+		<th class="bg_tr" align="left" height="25">编号</th>
+		<th class="bg_tr" align="left" height="25">班级</th>
+		<th class="bg_tr" align="left" height="25">姓名</th>
+		<th class="bg_tr" align="left" height="25">难度</th>
+		<th class="bg_tr" align="left" height="25">吸收程度</th>
+		<th class="bg_tr" align="left" height="25">问题或建议</th>
+		<th class="bg_tr" align="left" height="25">时间</th>
+	</tr>
+	<volist name='data' id='v' key='k'>
+	<tr>
+		<td class="td_bg" width="5%" height="23" align="center">{$k}</td>
+		<td class="td_bg">{$v.classname}</td>
+		<td class="td_bg">{$v.username}</td>
+		<td class="td_bg">
+			<if condition="$v.type eq 1">很难
+			<elseif condition="$v.type eq 2" />不太难
+			<elseif condition="$v.type eq 3" />一般般
+			<elseif condition="$v.type eq 4" />比较简单
+			<elseif condition="$v.type eq 5" />很简单
+			</if>
+		</td>
+		<td class="td_bg">
+			<if condition="$v.level eq 1">低于30%
+			<elseif condition="$v.level eq 2" />30~50%
+			<elseif condition="$v.level eq 3" />50~70%
+			<elseif condition="$v.level eq 4" />70~80%
+			<elseif condition="$v.level eq 5" />80%以上
+			</if>
+		</td>
+		<td class="td_bg">{$v.content}</td>
+		<td class="td_bg">{$v.addtime}</td>
+	</tr>
+	</volist>
+</tbody>
+</table>

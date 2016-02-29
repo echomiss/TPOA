@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>学生列表</title>
+<import type='css' file='Images.css1.css' />
+<import type='css' file='css.page' />
+<style>
+td, th {
+	text-align: center
+}
+#show{height:30px;text-align:left;}
+</style>
+</head>
+<body>
+<form method='post' action=''>
+  <table class="table" cellspacing="1" cellpadding="2" width="99%"
+			align="center" border="0">
+    <tbody>
+      <tr>
+        <th class="bg_tr" align="left" height="25">序号</th>
+        <th class="bg_tr" align="left" height="25">学生姓名</th>
+        <th class="bg_tr" align="left" height="25">班级</th>        
+        <th class="bg_tr" align="left" height="25">学生性别</th>
+        <th class="bg_tr" align="left" height="25">学生年龄</th>
+		<th class="bg_tr" align="left" height="25">联系电话</th>
+		<th class="bg_tr" align="left" height="25">家庭住址</th>
+        <th class="bg_tr" align="left" height="25">操作</th>
+      </tr>
+	  <volist name='list' id="v" key='k'>
+      <tr>
+        <td class="td_bg" width="5%" height="23" align="center">{$k}</td>
+        <td class="td_bg">{$v.name}</td>
+        <td class="td_bg">{$v.classname}</td>
+        <td class="td_bg">{$v.sex}</td>
+		<td class="td_bg">{$v.age}</td>
+        <td class="td_bg">{$v.tel}</td>
+        <td class="td_bg">{$v.address}</td>
+        <td class="td_bg">
+        	<a href="__URL__/editStu?id={$v.id}">修改 | </a> 
+        	<a onclick="return window.confirm('确定删除此学生信息？');" href="__URL__/deleteStu?id={$v.id}">删除</a> 
+        </td>
+      </tr>
+	  </volist>
+      <tr style="background:#fff">
+        <td id='show' colspan="9"><div class='flickr'>{$show}</div></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</body>
+</html>
